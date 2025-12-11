@@ -1,10 +1,11 @@
 # Read in the data
-import sys
-read = sys.stdin.read
+# import sys
+# read = sys.stdin.read
 f = open('day03.txt')
 
 # Each line becomes a sequence
 sequences = f.read().split('\n')
+f.close()
 
 # Each string has is a battery supply and we need the two values that will give the highest joltage
 # Create an array and use map to turn the values into integers

@@ -1,9 +1,10 @@
 # read in the data
-import sys
-read = sys.stdin.read
-f = open("day02.txt")
+# import sys
+# read = sys.stdin.read
+f = open("day02_test.txt")
 # split function looks at the text in the input file and breaks it up based on a comma
 input_ids = f.read().split(',')
+f.close()
 
 # Now check if every number in the string is repeated (invalid)
 def is_invalid(num):

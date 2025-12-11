@@ -1,10 +1,8 @@
 # Read in the data
-import sys
-read = sys.stdin.read
-f = open('day04.txt')
 
-# Generate a matrix
-rolls = [list(x) for x in f.read().split('\n')]
+with open('day04.txt', 'r') as f:
+    lines = list[str] = f.readlines()
+    rolls = [list(line.strip()) for line in lines]
 
 # Create a function that incorporates the Breath First Search (uses a tree diagram to check the value and add to a queue then does the next etc)
 def count_neighbors(x, y):
@@ -12,23 +10,23 @@ def count_neighbors(x, y):
 
     # For x the direction can be -1, 0 or 1
     for dx in range(-1, 0, 1):
+        curr_x = x + dx
         # Neglect values at the end of the grid
-        if x + dx < 0 or x + dx >= len(rolls):
+        if curr_x < 0 or curr_x >= len(rolls):
             continue
-    
+
     # For y the direction can be -1, 0, 1
-    for dy in range(-1, 0, 1):
+        for dy in range(-1, 0, 1):
+            curr_y = y + dy
         # Neglect values at the edge of the grid
-        if y + dy < 0 or y + dy >= len(rolls[x]):
-            continue
-
+            if curr_y < 0 or curr_y >= len(rolls[x]):
+                continue
         # If no shift then ignore
-        if dx == dy == 0:
-         continue
-
+            if dx == dy == 0:
+                continue
         # If there is @ then it is a roll
-        if rolls[x + dx] [y +  dy] == '@':
-            tot +=1
+            if rolls[curr_x] [curr_y] == '@':
+                tot +=1
     return tot
 
 # Count the rolls that can be retrieved
